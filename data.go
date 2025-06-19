@@ -1,12 +1,11 @@
-package core
+package ast_base
 
-var (
-	// Apis Project global API cache
+type metadata struct { // Apis Project global API cache
 	Apis map[string][]*MethodInfo
 
 	// Annotations Project global API annotations cache
 	Annotations map[string]map[string]string
-)
+}
 
 // MethodInfo Api method info
 type MethodInfo struct {
@@ -14,3 +13,5 @@ type MethodInfo struct {
 	APIPath string // API path
 	Name    string // Func name
 }
+
+var Metadata = &metadata{}
